@@ -7,12 +7,11 @@ public:
         }
 
         if(i == (n-1) && j==(m-1)){
-            // cout<<1;
             return 1;
         }
         
         if(dp[i][j]!= -1)
-        {cout<<dp[i][j];
+        {
             return dp[i][j];}
         else{
         
