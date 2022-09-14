@@ -1,11 +1,17 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        //a^a^b^b^c = c
         int ans = 0;
+        set<int>s;
         for(auto x: nums){
-            ans^=x;
+            ans+=x;
+            s.insert(x);  
         }
-        return ans;
+        int sum = 0;
+        for(auto i : s){
+            sum+=2*i;
+        }
+        return (sum-ans);
+        
     }
 };
