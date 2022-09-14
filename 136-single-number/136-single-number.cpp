@@ -1,13 +1,11 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-    sort(nums.begin(), nums.end());
-    int n = nums.size();
-    for(int i = 1; i<n; i+=2){
-        if(nums[i]!=nums[i-1]){
-            return nums[i-1];
+        //a^a^b^b^c = c
+        int ans = 0;
+        for(auto x: nums){
+            ans^=x;
         }
-    }
-    return nums[n-1];
+        return ans;
     }
 };
