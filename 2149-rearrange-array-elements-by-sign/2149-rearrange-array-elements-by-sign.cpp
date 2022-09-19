@@ -12,18 +12,12 @@ public:
                 pos.push_back(nums[i]);
             }
         }
-        int n1 = pos.size(), n2 = neg.size(), i= 0, j = 0,k=0;
-        while(i<n1 && j<n2){
-            nums[k] = pos[i++];
-            nums[++k] = neg[j++];
-            k++;
-        }
-        while(n2>j){
-            nums[k] = neg[j++];
-            
-        }
-        while(n1>i){
-            nums[k] = pos[i++];
+        int k = 0; int l = 0;
+        for(int i = 0; i< n; i++){
+            if(i%2==0){
+                nums[i] = pos[k++];
+            }
+            else nums[i]=neg[l++];
         }
         return nums;
     }
